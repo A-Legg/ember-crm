@@ -1,5 +1,8 @@
+outlet
+
 article#lead
   h1= model.fullName
+  link-to 'edit' 'lead.edit' model classNames='edit'
 
   p
     ' Name:
@@ -24,6 +27,7 @@ article#lead
   view Ember.TextArea value=model.notes
 
   p
+  a.delete href='#' click="delete" delete
   input type='submit' value='Save Changes' click='saveChanges'
   if isDirty
     .unsaved unsaved changes
